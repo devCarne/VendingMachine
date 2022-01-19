@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="VendingMachine.main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/VendingMachine_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="VendingMachine.main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: servlets.com:cos:05Nov2002" />
+          <element id="library" level="project" name="Gradle: com.oracle.ojdbc:ojdbc8:19.3.0.0" />
+          <element id="library" level="project" name="Gradle: com.oracle.ojdbc:ucp:19.3.0.0" />
+          <element id="library" level="project" name="Gradle: com.oracle.ojdbc:oraclepki:19.3.0.0" />
+          <element id="library" level="project" name="Gradle: com.oracle.ojdbc:osdt_cert:19.3.0.0" />
+          <element id="library" level="project" name="Gradle: com.oracle.ojdbc:osdt_core:19.3.0.0" />
+          <element id="library" level="project" name="Gradle: com.oracle.ojdbc:simplefan:19.3.0.0" />
+          <element id="library" level="project" name="Gradle: com.oracle.ojdbc:ons:19.3.0.0" />
+        </element>
+        <element id="directory" name="images" />
+      </element>
+      <element id="javaee-facet-resources" facet="VendingMachine.main/web/Web Gradle : VendingMachine-1.0-SNAPSHOT.war" />
+    </root>
+  </artifact>
+</component>
