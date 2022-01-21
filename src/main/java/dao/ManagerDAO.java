@@ -19,7 +19,7 @@ public class ManagerDAO {
     public ManagerDTO login(String ID, String PW) {
 
         String sql = "SELECT * FROM tbl_drink_manager WHERE ID = '" + ID + "'";
-        try(Statement statement = getConnection().createStatement(); ResultSet rs = statement.executeQuery(sql)) {
+        try (Statement statement = getConnection().createStatement(); ResultSet rs = statement.executeQuery(sql)) {
             rs.next();
             return new ManagerDTO(rs.getString("ID"), rs.getString("PW"), rs.getString("NAME"));
         } catch (SQLException e) {
@@ -30,7 +30,7 @@ public class ManagerDAO {
     public boolean signUp(ManagerDTO manager) {
 
         String sql = "INSERT INTO tbl_drink_manager VALUES (?, ?, ?)";
-        try(PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
+        try (PreparedStatement pstmt = getConnection().prepareStatement(sql)) {
             pstmt.setString(1, manager.getID());
             pstmt.setString(2, manager.getPW());
             pstmt.setString(3, manager.getName());
@@ -40,5 +40,20 @@ public class ManagerDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public boolean isID_Exist(String ID) {
+
+        String sql = "SELECT * FROM tbl_drink_manager WHERE ID = '" + ID + "'";
+        try (Statement statement = getConnection().createStatement(); ResultSet rs = statement.executeQuery(sql)) {
+            rs.next();
+            String result = rs.getString("ID");
+            if (result != null) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

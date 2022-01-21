@@ -8,7 +8,7 @@
     request.setCharacterEncoding("UTF-8");
 
     BasketDTO basket = (BasketDTO) session.getAttribute("basket");
-    pageContext.setAttribute("time", basket.getDate());
+    pageContext.setAttribute("time", basket.getTimestamp());
     pageContext.setAttribute("selection", basket.getSelection());
 
     DrinkService service = new DrinkService();

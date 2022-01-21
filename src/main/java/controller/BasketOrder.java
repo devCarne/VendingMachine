@@ -22,5 +22,8 @@ public class BasketOrder extends HttpServlet {
 
         OrderService service = new OrderService();
         service.order(basket);
+
+        session.removeAttribute("basket");
+        resp.sendRedirect("index.jsp");
     }
 }

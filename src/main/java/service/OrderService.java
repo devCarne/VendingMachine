@@ -4,6 +4,7 @@ import dao.OrderDAO;
 import dto.BasketDTO;
 import dto.OrderDTO;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class OrderService {
@@ -14,8 +15,12 @@ public class OrderService {
         HashMap<String, Integer> selection = basket.getSelection();
 
         selection.forEach((K, V) -> {
-            OrderDTO order = new OrderDTO(K, V, basket.getDate());
+            OrderDTO order = new OrderDTO(K, V, basket.getTimestamp());
             dao.insert(order);
         });
+    }
+
+    public ArrayList<OrderDTO> getList() {
+        return dao.getList();
     }
 }

@@ -11,7 +11,12 @@ public class ManagerService {
         return dao.login(ID, PW);
     }
 
+    public boolean idCheck(String ID) {
+        return dao.isID_Exist(ID);
+    }
+
     public boolean signUp(String ID, String PW, String name) {
+
         ManagerDTO manager = new ManagerDTO(ID, PW, name);
         return dao.signUp(manager);
     }

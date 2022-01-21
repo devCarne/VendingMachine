@@ -22,6 +22,7 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
+    //Servlet
     compileOnly('javax.servlet:javax.servlet-api:4.0.1')
     compileOnly group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.1'
     implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
@@ -29,16 +30,17 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-
+    //JSTL
     implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
-
+    //Lombok
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-
     testCompileOnly 'org.projectlombok:lombok:1.18.22'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
-
+    //OJDBC8
     implementation group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+    //Jquery
+    implementation group: 'org.webjars.bower', name: 'jquery', version: '3.6.0'
 }
 
 test {

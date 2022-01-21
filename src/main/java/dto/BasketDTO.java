@@ -1,22 +1,25 @@
 package dto;
 
+import lombok.Data;
+
 import java.sql.Date;
-import java.time.LocalDate;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Set;
 
+@Data
 public class BasketDTO {
 
-    Date date;
+    Timestamp timestamp;
     HashMap<String, Integer> orders;
 
     public BasketDTO() {
-        date = new Date(System.currentTimeMillis());
+        timestamp = new Timestamp(System.currentTimeMillis());
         orders = new HashMap<>();
     }
 
-    public Date getDate() {
-        return date;
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
     public HashMap<String, Integer> getSelection() {
