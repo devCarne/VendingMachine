@@ -15,17 +15,22 @@ import java.io.PrintWriter;
 public class ManagerIdCheck extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
 
         ManagerService service = new ManagerService();
+        String reqID = req.getParameter("id");
 
-        if (service.idCheck(req.getParameter("id"))) {
+        if (reqID.equals((""))) {
             out.print("no");
         } else {
-            out.print("yes");
+            if (service.idCheck(reqID)) {
+                out.print("no");
+            } else {
+                out.print("yes");
+            }
         }
     }
 }

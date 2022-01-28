@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="managerSignUp.jsp"/>
+<a href="managerSignUp.jsp">매니저 등록</a>
 <jsp:include page="drinkInsert.jsp"/>
 <jsp:include page="managerDrinkList.jsp"/>
 <jsp:include page="managerOrderList.jsp"/>

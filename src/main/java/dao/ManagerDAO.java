@@ -48,12 +48,9 @@ public class ManagerDAO {
         try (Statement statement = getConnection().createStatement(); ResultSet rs = statement.executeQuery(sql)) {
             rs.next();
             String result = rs.getString("ID");
-            if (result != null) {
-                return true;
-            }
+            return result != null;
         } catch (SQLException e) {
-            e.printStackTrace();
+            return false;
         }
-        return false;
     }
 }

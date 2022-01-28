@@ -16,12 +16,13 @@ public class ManagerSignUp extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        PrintWriter out = resp.getWriter();
+        req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
+        PrintWriter out = resp.getWriter();
 
         ManagerService service = new ManagerService();
 
-        if (service.signUp(req.getParameter("ID"), req.getParameter("PW"), req.getParameter("name"))) {
+        if (service.signUp(req.getParameter("id"), req.getParameter("pw"), req.getParameter("name"))) {
             out.println("<script>alert('등록에 성공했습니다.'); window.location.href='managerMain.jsp'</script>");
         } else {
             out.println("<script>alert('등록에 실패했습니다.'); window.location.href='managerMain.jsp'</script>");
